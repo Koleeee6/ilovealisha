@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Message</title>
+    <style>
+        body {
+            background-color: #ffccff;
+            color: #000000;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-size: contain;
+            animation: floatHeart 3s infinite cubic-bezier(0.36, 0.07, 0.19, 0.97);
+        }
+        .heart:nth-child(2) {
+            width: 30px;
+            height: 30px;
+            animation-duration: 2.5s;
+        }
+        .heart:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            animation-duration: 3s;
+        }
+        .heart:nth-child(4) {
+            width: 25px;
+            height: 25px;
+            animation-duration: 3.5s;
+        }
+        .heart:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            animation-duration: 2s;
+        }
+        .heart:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            animation-duration: 2.8s;
+        }
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100px) rotate(45deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-200px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        button {
+            background-color: #ff6666;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff3333;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #ff6666;
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup h2 {
+            color: #ff6666;
+            font-size: 20px;
+            margin: 0 0 10px 0;
+        }
+        .popup p {
+            color: #000;
+            font-size: 14px;
+            margin: 0 0 10px 0;
+        }
+        .popup .close-btn {
+            background-color: #ff6666;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .popup .close-btn:hover {
+            background-color: #ff3333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Love Page</h1>
+
+    <div class="hearts">
+        <div class="heart" style="left: 10%; top: 40%;"></div>
+        <div class="heart" style="left: 20%; top: 30%;"></div>
+        <div class="heart" style="left: 30%; top: 60%;"></div>
+        <div class="heart" style="left: 50%; top: 25%;"></div>
+        <div class="heart" style="left: 70%; top: 55%;"></div>
+        <div class="heart" style="left: 85%; top: 45%;"></div>
+
+        <!-- Zusätzliche herumspringende Herzen -->
+        <div class="heart" style="left: 5%; top: 20%; animation-delay: 1s;"></div>
+        <div class="heart" style="left: 75%; top: 70%; animation-delay: 0.5s;"></div>
+        <div class="heart" style="left: 40%; top: 80%; animation-delay: 1.5s;"></div>
+        <div class="heart" style="left: 15%; top: 65%; animation-delay: 2s;"></div>
+        <div class="heart" style="left: 60%; top: 15%; animation-delay: 0.8s;"></div>
+    </div>
+
+    <button onclick="showLoveMessage()">Click me if u love me</button>
+    
+    <div class="popup" id="love-popup">
+        <h2>For My Future Wife Alisha</h2>
+        <p>You are the love of my life.</p>
+        <p>My everything.</p>
+        <p>Every moment with you is a treasure that I cherish deeply.</p>
+        <p>I promise to love you, support you, and be by your side forever.</p>
+        <p>I love you.</p>
+        <p>Your future husband,</p>
+        <p>Kole</p>
+        <button class="close-btn" onclick="closeLoveMessage()">Close</button>
+    </div>
+
+    <script>
+        function showLoveMessage() {
+            document.getElementById('love-popup').style.display = 'block';
+        }
+
+        function closeLoveMessage() {
+            document.getElementById('love-popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
